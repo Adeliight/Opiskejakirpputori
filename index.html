@@ -9,8 +9,10 @@
 </head>
 <body>
     <header class="yla-palkki">
-        <h1>Opiskelija Kirppis</h1>
-        
+        <div class="header-vasen">
+            <h1>Opiskelija Kirppis</h1>
+            <span id="welcomeUser" class="hidden welcome-user"></span>
+        </div>
         <div class="header-oikea">
             <div class="haku">
                 <input type="search" id="hakuKentta" placeholder="Etsi tuotetta...">
@@ -19,6 +21,11 @@
             <a href="Lomake.html">
                 <button id="lomakeBtn">Myy tavarasi muille</button>
             </a>
+
+            <a href="signin.html" id="signInLink">
+                <button id="navSignIn">Sign In</button>
+            </a>
+            <button id="logoutBtn" class="hidden">Log out</button>
         </div>
     </header>
 
@@ -27,6 +34,7 @@
     </div>
 
     <script src="JS/script.js"></script>
+    <script src="JS/auth.js"></script>
     <script src="JS/ilmoitukset.js"></script>
 </body>
 </html>

@@ -48,7 +48,7 @@ body {
     cursor: pointer;
 }
 
-/*These !important are just making sure to prioritize the styles */
+/*These !important are just making sure to prioritize the styles (making it the first priority of all these othe styles) */
 .hidden {
     display: none !important;
 }
@@ -135,4 +135,70 @@ body.signed-in #welcomeUser {
     padding: 30px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 18px 40px;
+}
+
+.container section {
+    
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+    padding: 40px 25px;
+}
+
+.container section h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #1d4ed8;
+    font-size: 1.95rem;
+}
+
+#lomake {
+    display: grid;
+    gap: 18px;
+}
+
+.lomakeBox {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lomakeBox label {
+    font-weight: 600;
+    color: #334155;
+}
+
+.lomakeBox input {
+    width: 90%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    background: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lomakeBox input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.button {
+    position:absolute;
+    top:8px;
+    right:6px;
+    padding:8px 12px;
+    background: #007bff;
+    color:#fff;
+    border-radius: 8px;
+    cursor:pointer;
+
+  
 }

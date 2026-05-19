@@ -14,9 +14,28 @@ function findUser(username) {
   return users.find(u => u.username.toLowerCase() === username.toLowerCase());
 }
 
+function isValidGmail(email) {
+  if (!email) return false;
+  const lower = email.toLowerCase();
+  const gmailDomain = '@gmail.com';
+  if (!lower.endsWith(gmailDomain)) return false;
+  const localPart = lower.slice(0, -gmailDomain.length);
+  if (localPart.length < 4) return false;
+  if (!/^[a-z0-9._%+-]+$/.test(localPart)) return false;
+  const letterCount = (localPart.match(/[a-z]/g) || []).length;
+  return letterCount >= 4;
+}
+
+function isValidPassword(password) {
+  return typeof password === 'string' && password.length >= 4;
+}
+
 // Called by signup page
+//It checks to ensure that everything is valid
 function signupHandler({ username, password, email }) {
   if (!username || !password || !email) return { ok: false, msg: 'Please fill all fields' };
+  if (!isValidPassword(password)) return { ok: false, msg: 'Password must be at least 4 characters long' };
+  if (!isValidGmail(email)) return { ok: false, msg: 'Email must be a valid @gmail.com address with at least 4 or more of letters' };
   const users = getUsers();
   users.push({ username, password, email });
   saveUsers(users);

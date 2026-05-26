@@ -1,33 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Kirpputori</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Myynti lomake</title>
+  </head>
+  <body>
+    <a href="index.html">
+      <button id="takaisinBtn">Takaisin etusivulle</button>
+    </a>
+
     <div class="container">
-        <section>
-            <h2>Tee ilmoitus</h2>
-            <form id="lomake">
-                <div class="lomakeBox">
-                    <label for="otsikko">Tavaran merkki & malli *</label>
-                    <input type="text" id="otsikko" placeholder="Tavaran merkki & malli" required>
-                </div>
+      <section>
+        <h2>Tee ilmoitus</h2>
+        <form id="lomake">
+          <div class="lomakeBox">
+            <label for="otsikko">Tavaran merkki & malli*</label>
+            <input
+              type="text"
+              id="otsikko"
+              placeholder="Tavaran merkki & malli"
+              required
+            />
+          </div>
 
-                <div class="lomakeBox">
-                    <label for="kuvaus">kuvaus</label>
-                    <input type="text" id="kuvaus" placeholder="Kuvaa tuotettasi. Kunto, nouto/posti...." required></label>
-                </div>
+          <div class="lomakeBox">
+            <label for="kuvaus">Tuotteen kuvaus*</label>
+            <input
+              type="text"
+              id="kuvaus"
+              placeholder="Kuvaa tuotettasi. Kunto, nouto/posti...."
+              required
+            />
+          </div>
 
-                <div class="lomakeBox">
-                    <label for="hinta">Hinta (€)</label>
-                    <input type="number" id="hinta" placeholder="Hinta (€)">
-                </div>
-            <a class="button" href="index.html">Palaa etusivulle</a>
-            </form>
-        </section>
+          <div class="lomakeBox">
+            <label for="hinta">Hinta (€)</label>
+            <input
+              type="number"
+              id="hinta"
+              placeholder="Hinta (€), jätä tyhjäksi jos ilmainen"
+            />
+          </div>
+
+          <div class="lomakeBox">
+            <button id="julkaiseBtn">Julkaise myynti-ilmoitus</button>
+          </div>
+        </form>
+      </section>
     </div>
-</body>
+    <script src="JS/julkaisu.js"></script>
+  </body>
 </html>

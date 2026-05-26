@@ -1,204 +1,233 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
 }
 
 .yla-palkki {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: white;
 }
 
 .header-vasen {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .welcome-user {
-    font-size: 0.95rem;
-    color: #333;
+  font-size: 0.95rem;
+  color: #333;
 }
 
 .header-oikea {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-.haku-alue {
-    display: flex;
-    gap: 5px;
+.haku {
+  display: flex;
+  gap: 5px;
 }
 
 #hakuKentta {
-    padding: 8px;
-    border-radius: 4px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Lomakkeen myynti-ilmoitus julkaisemiseen tarvittava napin tyylittely*/
+#julkaiseBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#julkaiseBtn:hover {
+  background-color: #259541;
+}
+
+#hakuKentta {
+  padding: 8px;
+  border-radius: 4px;
 }
 
 #lomakeBtn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#takaisinBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 160vh;
+  margin-top: 15px;
+  margin-right: 15px;
 }
 
 /*These !important are just making sure to prioritize the styles (making it the first priority of all these othe styles) */
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 body.signed-in #signInLink,
 body.signed-in #signUpLink {
-    display: none !important;
+  display: none !important;
 }
 
 body.signed-in #logoutBtn,
 body.signed-in #welcomeUser {
-    display: inline-block !important;
+  display: inline-block !important;
 }
 
 .welcome-user {
-    font-size: 1.5rem;
-    color: #333;
-    font-family: 'Times New Roman';
-    padding: 6px 12px;
+  font-size: 1.5rem;
+  color: #333;
+  font-family: "Times New Roman";
+  padding: 6px 12px;
 }
 
 .auth-page {
-    max-width: 420px;
-    margin: 40px auto;
-    padding: 16px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .auth-page label {
-    display: block;
-    margin-bottom: 12px;
-    font-weight: 500;
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .auth-page input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .auth-actions {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .auth-actions button {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 5px;
-    background: #007bff;
-    color: white;
-    cursor: pointer;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
 }
 
 .auth-actions a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .message {
-    margin-top: 10px;
-    font-weight: 500;
+  margin-top: 10px;
+  font-weight: 500;
 }
 
 .message.error {
-    color: crimson;
+  color: crimson;
 }
 
 .message.success {
-    color: green;
+  color: green;
 }
 
 .ilmoitusGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 24px 18px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
 }
 
 .container section {
-    
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
-    padding: 40px 25px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  padding: 40px 25px;
 }
 
 .container section h2 {
-    margin-top: 0;
-    margin-bottom: 18px;
-    color: #1d4ed8;
-    font-size: 1.95rem;
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #1d4ed8;
+  font-size: 1.95rem;
 }
 
 #lomake {
-    display: grid;
-    gap: 18px;
+  display: grid;
+  gap: 18px;
 }
 
 .lomakeBox {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .lomakeBox label {
-    font-weight: 600;
-    color: #334155;
+  font-weight: 600;
+  color: #334155;
 }
 
 .lomakeBox input {
-    width: 90%;
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(148, 163, 184, 0.55);
-    background: #f8fafc;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 90%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: #f8fafc;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .lomakeBox input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
 }
 
 .button {
-    position:absolute;
-    top:8px;
-    right:6px;
-    padding:8px 12px;
-    background: #007bff;
-    color:#fff;
-    border-radius: 8px;
-    cursor:pointer;
-
-  
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
 }

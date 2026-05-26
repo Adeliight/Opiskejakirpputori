@@ -1,21 +1,29 @@
-const hakuKentta = document.getElementById('hakuKentta');
-const hakuBtn = document.getElementById('hakuBtn');
+const hakuKentta = document.getElementById("hakuKentta");
+const hakuBtn = document.getElementById("hakuBtn");
 
-function suoritaHaku() {
-    const hakusana = hakuKentta.value.toLowerCase().trim();
-    
-    const suodatetut = ilmoitukset.filter(tuote => 
-        tuote.otsikko.toLowerCase().includes(hakusana) || 
-        tuote.kuvaus.toLowerCase().includes(hakusana)
-    );
-    
-    naytaIlmoitukset(suodatetut);
+function haeIlmoitukset() {
+  const sana = hakuKentta.value.toLowerCase();
+
+  let tulokset = [];
+
+  for (let i = 0; i < kaikkiIlmoitukset.length; i++) {
+    let tuote = kaikkiIlmoitukset[i];
+
+    if (
+      tuote.otsikko.toLowerCase().includes(sana) ||
+      tuote.kuvaus.toLowerCase().includes(sana)
+    ) {
+      tulokset.push(tuote);
+    }
+  }
+
+  naytaIlmoitukset(tulokset);
 }
 
-hakuBtn.addEventListener('click', suoritaHaku);
+hakuBtn.addEventListener("click", haeIlmoitukset);
 
-hakuKentta.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        suoritaHaku();
-    }
+hakuKentta.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    haeIlmoitukset();
+  }
 });

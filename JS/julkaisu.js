@@ -12,6 +12,7 @@ function lisaaJulkaisu(tapahtuma) {
 
   let tuotteenHinta = hintaSyote.value.trim();
 
+  // Jos hintaa ei ole määritelty, automaattisesti oletetaan että tuote on ilmainen
   if (tuotteenHinta === "") {
     tuotteenHinta = "Ilmainen";
   } else {

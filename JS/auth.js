@@ -58,7 +58,7 @@ function signinHandler(username, password) {
   if (!username || !password) return { ok: false, msg: 'Please enter credentials' };
   const user = findUser(username);
   if (!user || user.password !== password) return { ok: false, msg: 'Invalid username or password' };
-  localStorage.setItem('currentUser', JSON.stringify({ id: userId, username: user.username, email: user.email }));
+  localStorage.setItem('currentUser', JSON.stringify({ id: user.id, username: user.username, email: user.email }));
   return { ok: true };
 }
 

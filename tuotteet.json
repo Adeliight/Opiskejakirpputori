@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "1",
+    "userId": 999,
+    "otsikko": "Kitaravahvistin",
+    "kuvaus": "Hyvässä kunnossa, nouto keskustasta",
+    "hinta": "50"
+  },
+  {
+    "id": "2",
+    "userId": 999,
+    "otsikko": "Laskuharjoituskirja",
+    "kuvaus": "Matematiikka 1, muutama merkintä",
+    "hinta": "10"
+  }
+]
+

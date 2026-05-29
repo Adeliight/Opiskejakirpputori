@@ -1,3 +1,12 @@
+// Toiminto hakee käyttäjälle uniikin ID
+function getNextUserId() {
+    const lastId = parseInt(localStorage.getItem('lastUserId') || '0', 10);
+    const nextId = lastId + 1;
+
+    // Tallennetaan ID localstorageen
+    localStorage.setItem('lastUserId', nextId.toString());
+    return nextId;
+}
 
 function getUsers() {
   try { return JSON.parse(localStorage.getItem('users') || '[]'); }
@@ -37,9 +46,10 @@ function signupHandler({ username, password, email }) {
   if (!isValidPassword(password)) return { ok: false, msg: 'Password must be at least 4 characters long' };
   if (!isValidGmail(email)) return { ok: false, msg: 'Email must be a valid @gmail.com address with at least 4 or more of letters' };
   const users = getUsers();
-  users.push({ username, password, email });
+  const userId = getNextUserId();
+  users.push({ id: userId, username, password, email }); // Lisätty userid jotta käyttäjä voi poistaa ilmoituksensa
   saveUsers(users);
-  localStorage.setItem('currentUser', JSON.stringify({ username, email }));
+  localStorage.setItem('currentUser', JSON.stringify({ id: userId, username, email }));
   return { ok: true };
 }
 
@@ -48,7 +58,7 @@ function signinHandler(username, password) {
   if (!username || !password) return { ok: false, msg: 'Please enter credentials' };
   const user = findUser(username);
   if (!user || user.password !== password) return { ok: false, msg: 'Invalid username or password' };
-  localStorage.setItem('currentUser', JSON.stringify({ username: user.username, email: user.email }));
+  localStorage.setItem('currentUser', JSON.stringify({ id: userId, username: user.username, email: user.email }));
   return { ok: true };
 }
 

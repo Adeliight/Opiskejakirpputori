@@ -39,8 +39,9 @@ body {
   border-radius: 4px;
 }
 
-/* Lomakkeen myynti-ilmoitus julkaisemiseen tarvittava napin tyylittely*/
-#julkaiseBtn {
+/* Lomakkeen myynti-ilmoitus julkaisemiseen tarvittava napin ja poisto napin tyylittely*/
+#julkaiseBtn,
+.poistaBtn {
   background-color: #28a745;
   color: white;
   border: none;
@@ -48,7 +49,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-#julkaiseBtn:hover {
+#julkaiseBtn:hover,
+.poistaBtn:hover {
   background-color: #259541;
 }
 

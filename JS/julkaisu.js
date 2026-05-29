@@ -7,6 +7,8 @@ const otsikkoSyote = document.getElementById("otsikko");
 const kuvausSyote = document.getElementById("kuvaus");
 const hintaSyote = document.getElementById("hinta");
 
+const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+
 function lisaaJulkaisu(tapahtuma) {
   tapahtuma.preventDefault();
 
@@ -20,6 +22,8 @@ function lisaaJulkaisu(tapahtuma) {
   }
 
   const uusiIlmoitus = {
+    id: Date.now().toString(),
+    userId: currentUser.id,
     otsikko: otsikkoSyote.value,
     kuvaus: kuvausSyote.value,
     hinta: tuotteenHinta,

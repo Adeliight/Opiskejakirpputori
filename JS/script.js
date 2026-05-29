@@ -27,3 +27,7 @@ hakuKentta.addEventListener("keydown", function (event) {
     haeIlmoitukset();
   }
 });
+
+logoutBtn.addEventListener("click", () => {
+  window.location.reload();
+});
